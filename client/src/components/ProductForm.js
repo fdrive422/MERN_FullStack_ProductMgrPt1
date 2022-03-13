@@ -28,45 +28,59 @@ const ProductForm = (props) => {
     }
 
     return (
-        <div>
-            <header>Product Manager</header>
-
+        <div className="border rounded p-3 m-5">
+            <h2 className="text-center">Product Manager</h2>
             <form onSubmit={submitHandler}>
-                <div className="form-fields">
-                    <label>Title</label>
+                <div className="mb-3 text-left">
+                    <label htmlFor="title" className="form-label">
+                        Title:
+                    </label>
                     <input
-                        onChange={(e) => setTitle(e.target.value)}
+                        type="text"
+                        className="form-control"
+                        id="title"
                         value={title}
-                        name='title'
-                        type='text'
+                        onChange={(e) => {
+                            setTitle(e.target.value);
+                        }}
                     />
-                </div>
 
-                <div className="form-fields">
-                    <label>Price</label>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Price" className="form-label">
+                        Price:
+                    </label>
                     <input
-                        onChange={(e) => setPrice(e.target.value)}
+                        type="number"
+                        className="form-control"
+                        id="Price"
                         value={price}
-                        name='price'
-                        type='number'
+                        onChange={(e) => {
+                            setPrice(e.target.value);
+                        }}
                     />
-                </div>
 
-                <div className="form-fields">
-                    <label> Description</label>
-                    <input
-                        onChange={(e) => setDescription(e.target.value)}
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="description" className="form-label">
+                        Description:
+                    </label>
+                    <textarea
+                        className="form-control"
+                        id="description"
                         value={description}
-                        name='description'
-                        type='text'
-                    />
+                        onChange={(e) => {
+                            setDescription(e.target.value);
+                        }}
+                    ></textarea>
+
                 </div>
-
-                <input type="submit" className="submit-input" value="Submit" />
+                <button type="submit" className="btn btn-primary">
+                    Submit
+                </button>
             </form>
-
         </div>
-    )
+    );
 }
 
 export default ProductForm;
