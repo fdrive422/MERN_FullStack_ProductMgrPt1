@@ -1,8 +1,6 @@
-// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Main from './views/Main';
 import ProductForm from './components/ProductForm';
 
 function App() {
